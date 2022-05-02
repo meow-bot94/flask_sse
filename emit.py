@@ -14,4 +14,6 @@ while True:
     except requests.exceptions.ConnectionError as e:
         # print('No connection found. Continue')
         pass
+    except Exception as e:
+        print(e)
     time.sleep(1)
