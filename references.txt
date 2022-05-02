@@ -1,0 +1,18 @@
+https://medium.com/code-zen/python-generator-and-html-server-sent-events-3cdf14140e56
+https://github.com/singingwolfboy/flask-sse/issues/7
+https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events
+https://github.com/MaxHalford/flask-sse-no-deps
+https://maxhalford.github.io/blog/flask-sse-no-deps/
+https://github.com/datahappy1/flask_sse_example_project
+https://github.com/DazWorrall/flask-sse
+https://flask-sse.readthedocs.io/en/latest/quickstart.html
+https://developer.mozilla.org/en-US/docs/Web/API/EventSource
+https://www.velotio.com/engineering-blog/how-to-implement-server-sent-events-using-python-flask-and-react
+https://www.bytewax.io/blog/data-stream-server-sent-events/
+https://dev.to/miketalbot/server-sent-events-are-still-not-production-ready-after-a-decade-a-lesson-for-me-a-warning-for-you-2gie
+
+https://www.youtube.com/watch?v=FppvGEEv4l4
+https://stackoverflow.com/questions/30615102/server-side-event-sse-in-flask-pushes-constantly-instead-of-on-request
+
+https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events#sending_events_from_the_server
+Warning: When not used over HTTP/2, SSE suffers from a limitation to the maximum number of open connections, which can be especially painful when opening multiple tabs, as the limit is per browser and is set to a very low number (6).

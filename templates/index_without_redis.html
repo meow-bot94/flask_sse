@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!--<meta http-equiv="refresh" content="60" >-->
+<html>
+<head>
+  <title>Flask-SSE Quickstart</title>
+</head>
+<body>
+  <h1>Flask-SSE Quickstart</h1>
+  <p id="target_text">  {"datetime": "2022-05-02 14:38:18.063211", "message": "0.41"} </p>
+  <input type="text" id="input_text">
+  <button onclick="publish()">send</button>
+
+  <script>
+    // var targetContainer = document.getElementById("target_text");
+    function updateTargetText(event) {
+      if (typeof event !== undefined){
+        console.log(event.data);
+        // var data = JSON.parse(event.data);
+        document.getElementById("target_text").innerHTML = event.data;
+        // $('#target_text').append(event.data + "<br/>");
+      }
+      else {
+        console.log('event is undefined')
+      }
+    }
+
+    const source = new EventSource("/subscribe");
+    // source.addEventListener = ('message', updateTargetText);
+    source.onopen = function(){
+      console.log('connection opened');
+      document.getElementById("target_text").innerHTML = 'connection opened!';
+    };
+
+    source.onerror = function(err) {
+      console.error("EventSource failed:", err);
+    };
+    source.onmessage = updateTargetText;
+    function post(url, data) {
+      var request = new XMLHttpRequest();
+      request.open('POST', url, true);
+      request.setRequestHeader('Content-Type', 'text/plain; charset=UTF-8');
+      request.send(data);
+    }
+    function publish() {
+      var message = document.getElementById("input_text").value;
+      post('/publish', message);
+    }
+  </script>
+</body>
+</html>
