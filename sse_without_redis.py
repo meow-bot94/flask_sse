@@ -19,7 +19,7 @@ def format_sse(data: str, event_type: str):
 def publish():
     data = flask.request.data.decode('utf-8')
     print(f'publish: {data}')
-    channel.publish(data, 'message')
+    channel.publish(data, 'my_custom_event_type')
     return "OK"
 
 

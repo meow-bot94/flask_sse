@@ -25,7 +25,7 @@
     }
 
     const source = new EventSource("/subscribe");
-    // source.addEventListener = ('message', updateTargetText);
+
     source.onopen = function(){
       console.log('connection opened');
       document.getElementById("target_text").innerHTML = 'connection opened!';
@@ -34,7 +34,9 @@
     source.onerror = function(err) {
       console.error("EventSource failed:", err);
     };
-    source.onmessage = updateTargetText;
+    // source.onmessage = updateTargetText;
+    source.addEventListener("my_custom_event_type", updateTargetText, false);
+
     function post(url, data) {
       var request = new XMLHttpRequest();
       request.open('POST', url, true);
